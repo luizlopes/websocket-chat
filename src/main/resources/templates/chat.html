@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <title>Hello WebSocket</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/main.css" rel="stylesheet"/>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/chat.js"></script>
+</head>
+<body>
+<noscript>
+    <h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+        enabled. Please enable
+        Javascript and reload this page!</h2>
+</noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <form class="form-group">
+            <h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]!</h3>
+            <button id="connect" class="btn btn-sucess" type="submit">Connect</button>
+            <button id="disconnect" class="btn btn-danger" type="submit" disabled="disabled">Disconnect</button>
+        </form>
+    </div>
+    <div class="row">
+        <form class="form-group">
+            <div class="col-xs-6">
+                <input type="text" id="text" class="form-control" placeholder="Your text here..."/>
+            </div>
+            <div class="col-xs-3">
+                <select id="recipient" class="form-control">
+                    <option value="">Todos</option>
+                    <option value="fulano@gmail.com">fulano</option>
+                    <option value="ciclano@gmail.com">ciclano</option>
+                    <option value="beltrano@gmail.com">beltrano</option>
+                </select>
+            </div>
+            <div class="col-xs-2">
+                <button id="send" class="btn btn-primary" type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Messages</th>
+                </tr>
+                </thead>
+                <tbody id="messages">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
