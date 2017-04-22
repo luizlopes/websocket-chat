@@ -1,4 +1,4 @@
-package org.luizlopes.chat;
+package org.luizlopes.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;

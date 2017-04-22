@@ -1,4 +1,4 @@
-package org.luizlopes.chat;
+package org.luizlopes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

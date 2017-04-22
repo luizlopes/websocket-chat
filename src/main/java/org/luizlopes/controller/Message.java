@@ -1,4 +1,4 @@
-package org.luizlopes.chat;
+package org.luizlopes.controller;
 
 import lombok.Data;
 
